@@ -5,10 +5,10 @@ metadata:
   labels:
     run: grafanademoservice
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
-  - port: 3000
+  - port: 80
     targetPort: 3000
     protocol: TCP
   selector:
-    r: grafanademoapp
+    run: grafanademoapp
