@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: grafanademo
+  labels:
+    run: grafanademoapp
+spec:
+  containers:
+  - name: grafana
+    image: docker.io/lauriui/grafanademo
+  - name: influx
+    image: docker.io/influxdb:1.7.9
+  - name: generator
+    image: docker.io/lauriui/demo
+    ports:
+    - containerPort: 3000
